@@ -25,13 +25,18 @@
 // A.length is even
 
 var repeatedNTimes = function(A) {
-	var checked = []
+	var checked = {}
     for (var i = 0; i < A.length; i++) {
-    	if (A[i] instanceof checked) {
-    		continue;
+    	if (! checked[A[i]]){
+    		checked[A[i]] = 1
     	}
     	else{
-    		if () {}
+    		checked[A[i]]++
     	}
     }
+
+    return Object.keys(checked).find(key => checked[key] === A.length/2)
 };
+
+console.log(repeatedNTimes([5,1,5,2,5,3,5,4]))
+
