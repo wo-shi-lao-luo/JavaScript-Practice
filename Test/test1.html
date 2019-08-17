@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>
+		<a href="#" onclick="add();">More</a>
+	</p>
+	<ul id="the_list">
+		<li>First Item</li>
+	</ul>
+	<script type="text/javascript">
+		counter = 0;
+		function add() {
+			counter++;
+			var x = document.createElement('li');
+			x.className = "list_item";
+			x.innerHTML = "The counter is " + counter;
+			document.getElementById('the_list').appendChild(x);
+			return;
+		}
+	</script>
+</body>
+</html>
