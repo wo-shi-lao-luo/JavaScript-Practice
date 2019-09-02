@@ -1,0 +1,13 @@
+{
+  "name": "Node.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "b nb io.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node createServer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
