@@ -1,23 +1,17 @@
 const http = require('http');
 const fs = require('fs');
+const ejs = require('ejs');
 const config = require('./config').config;
 
+var template = fs.readFileSync(__dirname + '/hello.ejs', 'utf-8');
 const server = http.createServer((req, res) => {
+	var data = ejs.render(template, {
+		title: 'Hello, ejs',
+		content: '<strong>Hello ejs</strong>'
+	});
+	res.setHeader('Content-Type', 'text/html');
 	res.statusCode = 200;
-	res.setHeader('Content-Type', 'text/plain');
-	switch (req.url) {
-		case '/':
-			res.end('Hello, world');
-			break;
-		case '/about':
-			res.end('About page');
-			break;
-		case '/home':
-			res.end('Home page');
-			break;
-		default:
-			res.end('Not Found!');
-	}
+	res.end(data);
 })
 
 server.listen(config.port, config.hostname,() => {
