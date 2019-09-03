@@ -25,10 +25,6 @@ const server = http.createServer((req, res) => {
 	else {
 		showForm(posts, res);
 	}
-
-	res.setHeader('Content-Type', 'text/html');
-	res.statusCode = 200;
-	res.end(data);
 })
 
 server.listen(config.port, config.hostname,() => {
